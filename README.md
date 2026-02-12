@@ -216,3 +216,83 @@ CREATE TABLE EstadisticasCompleto(
 	);
 
 ```
+```bash
+CREATE TABLE [NombreBaseDatos].[dbo].[NombreTablaDestino] (
+    -- Identificacion y Ubicacion
+    [ABONADO] [nvarchar](MAX) NULL,
+    [NOMBRE] [nvarchar](MAX) NULL,
+    [LOCALIDAD] [nvarchar](MAX) NULL,
+    [PROVINCIA] [nvarchar](MAX) NULL,
+    [CP] [int] NULL,
+    [GRUPO] [nvarchar](MAX) NULL,
+    [CLASE] [nvarchar](MAX) NULL,
+    
+    -- Identificadores Internos
+    [RLDES] [nvarchar](MAX) NULL,
+    [TXTID] [nvarchar](MAX) NULL,
+    [SERIALNO] [int] NULL,
+    [TIPO] [nvarchar](MAX) NULL,
+    
+    -- Delegacion e Instalador
+    [DELEGACION] [nvarchar](MAX) NULL,
+    [NOMBRE_DELEGACION] [nvarchar](MAX) NULL,
+    [INSTALADOR] [nvarchar](MAX) NULL,
+    [NOMBRE_INSTALADOR] [nvarchar](MAX) NULL,
+    
+    -- Datos del Evento
+    [NUN_LOG] [int] NULL,
+    [NUM_EVENTO] [int] NULL,
+    [FECHA_EVENTO] [datetime] NULL,
+    [DIA_MES] [int] NULL,
+    [DIA_SEMANA] [nvarchar](MAX) NULL,
+    [HORA] [int] [nvarchar](MAX) NULL,
+    [FRANJA_HORARIA] [nvarchar](MAX) NULL,
+    [CODIGO_EVENTO] [nvarchar](MAX) NULL,
+    [PRIORIDAD] [int] NULL,
+    [CATEGORIA] [nvarchar](MAX) NULL,
+    [EVENTO] [nvarchar](MAX) NULL, 
+    [AREA] [nvarchar](MAX) NULL,
+    [DESC_ZONA] [nvarchar](MAX) NULL,
+    [Origen Alarma] [nvarchar](MAX) NULL,
+    
+    -- Resolucion
+    [CODIGO_RESOLUCION] [nvarchar](MAX) NULL,
+    [DESC_RESOLUCION] [nvarchar](MAX) NULL,
+    [RESOLUCION] [nvarchar](MAX) NULL,
+    
+    -- Tiempos y Usuarios (Metricas)
+    [CIERRE_AGRUPADO] [nvarchar](MAX) NULL,
+    [T_SEG_VER_ALARMA] [int] NULL,
+    [T_SEG_VER_1_ACCION] [int] NULL,
+    [T__SEG_PRI_LLAMADA] [int] NULL,
+    [T_SEG_GESTION_ALARMA] [int] NULL,
+    [TIEMPO_SEG_CIERRE] [int] NULL,
+    [USUARIO_VER_ALARMA] [nvarchar](MAX) NULL,
+    [USUARIO_CIERRE] [nvarchar](MAX) NULL,
+    [USUARIO_CIERRE2] [nvarchar](MAX) NULL,
+    [GSECTIME] [datetime] NULL,
+    
+    -- Contadores
+    [# CONTACTOS INSTALACION] [int] NULL,
+    [# CONTACTOS INSTALDORA] [int] NULL,
+    [# CONTACTOS DELEGACION] [int] NULL,
+    [# CONTACTOS AGENCIA] [int] NULL,
+    [# CONTACTOS AUTORIDAD] [int] NULL,
+    [# CONTACTOS PERSONAS] [int] NULL,
+    [# CONTACTOS MARCADOS] [int] NULL,
+    [# CONTACTOS Unknown] [int] NULL,
+    [# CONTACTOS CONTACTADOS] [int] NULL,
+    [# CONTACTOS COMUNICAN] [int] NULL,
+    [# CONTACTOS NO ESTN] [int] NULL,
+    [# CONTACTOS ERROR] [int] NULL,
+    [# CONTACTOS DEJA MENSAJE] [int] NULL,
+    [# CONTACTOS NO COSTESTA] [int] NULL,
+    [# CONTACTOS CANCELADOS] [int] NULL,
+    [# CONTACTOS NO RESPONDERA] [int] NULL,
+    [# CONTACTOS REV CMD] [int] NULL,
+    [# CONTACTOS ENVIOS] [int] NULL,
+    [# EN ESPERA] [int] NULL
+);
+
+
+```
