@@ -1,5 +1,5 @@
 # je
-'''bash
+```bash
 USE [Informes] 
 GO
 
@@ -215,5 +215,4 @@ CREATE TABLE EstadisticasCompleto(
 		[Paneles Sin Grado] [int] NULL
 	);
 
-
-'''
+```
