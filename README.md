@@ -1,9 +1,6 @@
 # je
 ```bash
-USE [Informes] 
-GO
-
-CREATE TABLE EstadisticasCompleto( 
+CREATE TABLE TmpFichasAbonados( 
 	[SERIALNO] [int] NULL,  
 	[ID CLIENTE] [nvarchar](100) NULL, 
 	[NOMBRE CLIENTE] [nvarchar](200) NULL, 
@@ -159,7 +156,7 @@ CREATE TABLE EstadisticasCompleto(
 	[Modulo IP] [nvarchar](500) NULL,
 	[Marca IP] [nvarchar](50) NULL,
 	[MAC/SN] [nvarchar](100) NULL,
-	[IP/DNS CCTV] [nvarchar](MA100X) NULL,
+	[IP/DNS CCTV] [nvarchar](100) NULL,
 	[Puerto] [nvarchar](50) NULL,
 	[Conexion Telefonica] [nvarchar](50) NULL,
 	[Nº Telefono] [nvarchar](100) NULL,
@@ -217,13 +214,13 @@ CREATE TABLE EstadisticasCompleto(
 
 ```
 ```bash
-CREATE TABLE AlarmasMensuales (
+CREATE TABLE EstadisticasCompleto (
     -- Identificacion y Ubicacion
     [ABONADO] [nvarchar](MAX) NULL,
     [NOMBRE] [nvarchar](MAX) NULL,
     [LOCALIDAD] [nvarchar](MAX) NULL,
     [PROVINCIA] [nvarchar](MAX) NULL,
-    [CP] [int] NULL,
+    [CP] [nvarchar](MAX) NULL,
     [GRUPO] [nvarchar](MAX) NULL,
     [CLASE] [nvarchar](MAX) NULL,
     
@@ -245,7 +242,7 @@ CREATE TABLE AlarmasMensuales (
     [FECHA_EVENTO] [datetime] NULL,
     [DIA_MES] [int] NULL,
     [DIA_SEMANA] [nvarchar](MAX) NULL,
-    [HORA] [int] [nvarchar](MAX) NULL,
+    [HORA] [nvarchar](MAX) NULL,
     [FRANJA_HORARIA] [nvarchar](MAX) NULL,
     [CODIGO_EVENTO] [nvarchar](MAX) NULL,
     [PRIORIDAD] [int] NULL,
@@ -293,6 +290,5 @@ CREATE TABLE AlarmasMensuales (
     [# CONTACTOS ENVIOS] [int] NULL,
     [# EN ESPERA] [int] NULL
 );
-
 
 ```
