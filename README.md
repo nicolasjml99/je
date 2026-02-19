@@ -1,23 +1,22 @@
 # je
 ```bash
--- 1. Nombre de la tabla (y del archivo)
+-- 1. Variables
 DECLARE @FileName NVARCHAR(100) = 'EstadisticasCompleto202601'; 
-
--- 2. Configuración de entorno
 DECLARE @Server    NVARCHAR(200) = 'DESKTOP-T8ODGAK\SQLEXPRESS';
 DECLARE @BDInformes NVARCHAR(200) = 'Informes';
 DECLARE @Folder    NVARCHAR(200) = 'C:\Ficheros_csv\'; 
 
--- 3. Variable corregida (NVARCHAR 4000 para evitar Msg 214)
-DECLARE @Command   NVARCHAR(4000);
+-- 2. Variable para el comando (usamos NVARCHAR 4000 para evitar el Msg 214)
+DECLARE @Command NVARCHAR(4000);
 
--- 4. Construcción del comando usando CHAR(34) para las comillas dobles
--- Esto asegura que el comando sea: bcp "SELECT..." queryout "C:\ruta\fichero.csv" ...
+-- 3. Construcción limpia con CHAR(34) para las comillas "
+-- Esto asegura que el parámetro -C llegue al final correctamente
 SET @Command = 'bcp ' + CHAR(34) + 'SELECT * FROM ' + @BDInformes + '.dbo.' + @FileName + CHAR(34) + 
                ' queryout ' + CHAR(34) + @Folder + @FileName + '.csv' + CHAR(34) + 
                ' -c -t, -T -S ' + @Server + ' -C';
 
--- 5. Ejecutar
+-- 4. Ejecución (puedes ver qué se va a ejecutar con PRINT antes)
+-- PRINT @Command; 
 EXEC xp_cmdshell @Command;
 ```
 ```bash
