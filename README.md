@@ -1,23 +1,23 @@
 # je
 ```bash
--- 1. Variables
-DECLARE @FileName NVARCHAR(100) = 'EstadisticasCompleto202601'; 
-DECLARE @Server    NVARCHAR(200) = 'DESKTOP-T8ODGAK\SQLEXPRESS';
-DECLARE @BDInformes NVARCHAR(200) = 'Informes';
-DECLARE @Folder    NVARCHAR(200) = 'C:\Ficheros_csv\'; 
-
--- 2. Variable para el comando (usamos NVARCHAR 4000 para evitar el Msg 214)
-DECLARE @Command NVARCHAR(4000);
-
--- 3. Construcción limpia con CHAR(34) para las comillas "
--- Esto asegura que el parámetro -C llegue al final correctamente
-SET @Command = 'bcp ' + CHAR(34) + 'SELECT * FROM ' + @BDInformes + '.dbo.' + @FileName + CHAR(34) + 
-               ' queryout ' + CHAR(34) + @Folder + @FileName + '.csv' + CHAR(34) + 
-               ' -c -t, -T -S ' + @Server + ' -C';
-
--- 4. Ejecución (puedes ver qué se va a ejecutar con PRINT antes)
--- PRINT @Command; 
-EXEC xp_cmdshell @Command;
+CREATE TABLE EventosProgramacion(
+    [SERIALNO] [int] NULL,
+    [ABONADO] [nvarchar](MAX) NULL,
+    [INSTALADOR] [nvarchar](MAX) NULL,
+    [SYSNO] [int] NULL,
+    [SEQ] [int] NULL,
+    [Tipo] [nvarchar](MAX) NULL,
+    [STCODE] [nvarchar](MAX) NULL,
+    [COMMSNO] [nvarchar](MAX) NULL,
+    [AREA] [nvarchar](MAX) NULL,
+    [ZONE] [nvarchar](MAX) NULL,
+    [ALARM] [nvarchar](MAX) NULL,
+    [ACTIONMODE] [nvarchar](MAX) NULL,
+    [ACTIONS] [nvarchar](MAX) NULL,
+    [actsts] [nvarchar](MAX) NULL,
+    [INSTDEF] [int] NULL,
+    [SIGINST] [int] NULL
+);
 ```
 ```bash
 CREATE TABLE TmpFichasAbonados( 
